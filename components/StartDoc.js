@@ -13,7 +13,7 @@ function StartDoc() {
             buttonType='outline'
             iconOnly={true}
             ripple='dark'
-            rounded='full'
+            rounded={true}
             className='border-0'
           >
             <Icon name='more_vert' size='3xl' />
