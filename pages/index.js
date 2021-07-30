@@ -1,4 +1,6 @@
+import Icon from '@material-tailwind/react/Icon'
 import Head from 'next/head'
+import Documents from '../components/Documents'
 import Header from '../components/Header'
 import StartDoc from '../components/StartDoc'
 
@@ -12,7 +14,10 @@ export default function Home() {
 
       <Header />
 
-      <StartDoc />
+      <main>
+        <StartDoc />
+        <Documents />
+      </main>
     </div>
   )
 }
