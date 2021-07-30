@@ -1,3 +1,7 @@
+import Button from '@material-tailwind/react/Button'
+import Icon from '@material-tailwind/react/Icon'
+import Image from 'next/image'
+
 function StartDoc() {
   return (
     <section className='bg-[#f8f9fa] pb-10 px-10'>
