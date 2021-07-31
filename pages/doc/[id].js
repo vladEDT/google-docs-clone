@@ -5,6 +5,8 @@ import Login from '../../components/Login'
 import {getSession, useSession, signOut} from 'next-auth/client'
 import Button from '@material-tailwind/react/Button'
 import {useRouter} from 'next/dist/client/router'
+import TextEditor from '../../components/TextEditor'
+import Head from 'next/head'
 
 function Doc() {
   const [session] = useSession()
@@ -25,6 +27,9 @@ function Doc() {
 
   return (
     <div>
+      <Head>
+        <title>{fileName}</title>
+      </Head>
       <header className='flex justify-between items-center p-3 pb-1'>
         <span onClick={() => router.push('/')} className='cursor-pointer'>
           <Icon name='description' size='5xl' color='blue' />
@@ -62,8 +67,20 @@ function Doc() {
           alt='profile'
         />
       </header>
+
+      <TextEditor />
     </div>
   )
 }
 
 export default Doc
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context)
+
+  return {
+    props: {
+      session
+    }
+  }
+}
