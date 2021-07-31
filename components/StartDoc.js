@@ -2,7 +2,7 @@ import Button from '@material-tailwind/react/Button'
 import Icon from '@material-tailwind/react/Icon'
 import Image from 'next/image'
 
-function StartDoc() {
+function StartDoc({setShowModal}) {
   return (
     <section className='bg-[#f8f9fa] pb-10 px-10'>
       <div className='max-w-3xl mx-auto'>
@@ -21,7 +21,10 @@ function StartDoc() {
         </div>
 
         <div>
-          <div className='relative h-52 w-40 border-2 cursor-pointer hover:border-blue-700'>
+          <div
+            onClick={() => setShowModal(true)}
+            className='relative h-52 w-40 border-2 cursor-pointer hover:border-blue-700'
+          >
             <Image
               src='https://ssl.gstatic.com/docs/templates/thumbnails/docs-blank-googlecolors.png'
               layout='fill'
